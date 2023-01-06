@@ -1,0 +1,11 @@
+.loginContainer {
+  font-weight: "bold";
+}
+.login {
+  color: black;
+  width: "70%";
+  text-align: "right";
+}
+.login:hover {
+  color: rgb(85, 85, 85);
+}

@@ -1,0 +1,171 @@
+.LoginPageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f5f5f500;
+  overflow: scroll;
+}
+.LoginBox {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  align-items: center;
+  height: 400px;
+  width: 300px;
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.3);
+}
+.LoginBoxHeader {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  height: 40px;
+  font-size: 30px;
+  font-weight: bold;
+}
+.LoginForm {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-evenly;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 150px;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+}
+.LoginForm input {
+  width: 200px;
+  height: 25px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+.LoginForm input:focus {
+  outline: none;
+  border: 1.5px solid #000;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+.LoginForm button {
+  margin-top: 10px;
+  width: 200px;
+  height: 30px;
+  border-radius: 10px;
+  border: 2px solid rgb(0, 0, 0);
+  background-color: #fff;
+  color: #000;
+  font-weight: bold;
+  font-size: 15px;
+}
+.LoginForm button:hover {
+  margin-top: 10px;
+  cursor: pointer;
+  width: 200px;
+  height: 30px;
+  border-radius: 10px;
+  border: 2px solid rgb(0, 0, 0);
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 15px;
+}
+.RegisterForm {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-evenly;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 190px;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+}
+.RegisterForm input {
+  width: 200px;
+  height: 25px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+.RegisterForm input:focus {
+  outline: none;
+  border: 1.5px solid #000;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+.RegisterForm button {
+  margin-top: 10px;
+  width: 200px;
+  height: 30px;
+  border-radius: 10px;
+  border: 2px solid rgb(0, 0, 0);
+  background-color: #fff;
+  color: #000;
+  font-weight: bold;
+  font-size: 15px;
+}
+.RegisterForm button:hover {
+  margin-top: 10px;
+  cursor: pointer;
+  width: 200px;
+  height: 30px;
+  border-radius: 10px;
+  border: 2px solid rgb(0, 0, 0);
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 15px;
+}
+.LoginBoxButton {
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  text-decoration: underline;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.LoginBoxButton:hover {
+  margin-top: 10px;
+  color: rgb(100, 100, 100);
+}
+.InvalidForm {
+  font-size: 10px;
+  color: red;
+}
+.Registering {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  font-weight: bold;
+}
+
+@media all and (max-width: 440px) {
+  .LoginBox {
+    width: 90vw;
+    box-shadow: none;
+  }
+  .LoginBoxButton {
+    width: 100vw;
+  }
+}
+@media all and (max-height: 550px) {
+  .LoginPageContainer {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+@media all and (max-height: 450px) {
+  .LoginPageContainer {
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+  }
+  .LoginBox {
+    width: 90vw;
+    box-shadow: none;
+  }
+}

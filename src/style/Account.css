@@ -1,0 +1,99 @@
+.MyOrders {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  /* align-items: center; */
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  padding: 4rem;
+  margin-top: 4rem;
+  font-size: 40px;
+  font-weight: bolder;
+}
+.itemPurchased {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 44px;
+  border-radius: 0px 0px 15px 15px;
+  background-color: rgb(200, 200, 200);
+  color: rgb(100 100 100);
+  font-size: 20px;
+  font-weight: bold;
+  border: 0px;
+  border-top: 1px solid #ccc;
+}
+.MyProducts {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  /* align-items: center; */
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  padding: 4rem 0rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  font-size: 40px;
+  font-weight: bolder;
+  box-shadow: inset 0px 0px 50px #ccc;
+}
+
+@media all and (max-width: 480px) {
+  .itemContainer {
+    padding: 0rem;
+    padding-top: 4rem;
+  }
+  .FreshRecommendations {
+    padding-left: 2rem;
+  }
+  .itemCard {
+    margin-bottom: 2rem;
+  }
+}
+@media all and (max-width: 400px) {
+  .itemContainer {
+    padding: 0rem;
+    padding-top: 4rem;
+  }
+  .FreshRecommendations {
+    font-size: 20px;
+  }
+  .MyOrders {
+    padding-left: 2rem;
+    font-size: 30px;
+  }
+  .MyProducts {
+    padding-left: 2rem;
+    font-size: 30px;
+  }
+}
+
+@media all and (max-width: 350px) {
+  .itemCard {
+    height: 450px;
+  }
+  .itemCardBody {
+    height: 150px;
+  }
+  .itemCardBodyRowTwo {
+    flex-direction: column;
+  }
+  .itemCardSeller {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+  .itemCardDate {
+    width: 80%;
+    padding-right: 0rem;
+    padding-left: 1.5rem;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+}

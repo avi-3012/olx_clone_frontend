@@ -1,0 +1,50 @@
+.Menu {
+  width: 70%;
+  text-align: right;
+}
+.MenuValue {
+  display: inline-block;
+}
+
+.MenuItemContainer {
+  display: none;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1;
+}
+.MenuLine {
+  display: inline-block;
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+  margin: 5px 0;
+}
+.MenuValue:hover {
+  background-color: #fff;
+}
+.MenuValue:hover .MenuItemContainer {
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+  height: 140px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0px 0.1px 5px black;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  top: 0.5rem;
+}
+.MenuItem {
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+}
+.MenuItem:hover {
+  color: rgb(85, 85, 85);
+  text-decoration: underline;
+}
