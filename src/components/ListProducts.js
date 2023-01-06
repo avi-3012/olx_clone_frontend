@@ -46,7 +46,7 @@ const ListProducts = (props) => {
         } else {
         }
       });
-  });
+  }, []);
   useEffect(() => {}, [handleBuy]);
 
   return (

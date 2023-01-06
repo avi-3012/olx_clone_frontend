@@ -14,7 +14,7 @@ const Navbar = (props) => {
     } else {
       setMenuData(<Login />);
     }
-  }, [props.isLoggedIn]);
+  }, [props]);
   return (
     <section className="navbar">
       <LogoMain />

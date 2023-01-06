@@ -6,10 +6,8 @@ const apiUrl = process.env.REACT_APP_URL + `/api`;
 const Account = (props) => {
   // console.log(props.email);
   // console.log(props.isLoggedIn);
-  const [listMyOrders, setListMyOrders] = React.useState([]);
   const [listProducts, setListProducts] = React.useState([]);
   const [listMyProducts, setListMyProducts] = React.useState([]);
-  const [fetchedProducts, setFetchedProducts] = React.useState(false);
 
   const fetchingMyOrders = React.useCallback(async () => {
     try {
@@ -33,36 +31,34 @@ const Account = (props) => {
       );
       const data = await response.json();
       var data2 = await response2.json();
-
+      data.orders = data.orders.reverse();
       data2.products = data2.products.reverse();
+      console.log(data);
 
-      setListMyOrders(data.orders);
+      if (data.orders && data.orders.length > 0) {
+        var productArr = [];
+        data.orders.map(async (item) => {
+          const { product, date } = item;
+          const response = await fetch(apiUrl + `/product/${product}`);
+          const productData = await response.json();
+          productData.product.date = date;
+          productArr.push(productData.product);
+          setListProducts(productArr);
+        });
+      }
+
       setListMyProducts(data2.products);
-      setFetchedProducts(true);
     } catch (error) {
       console.log("IGNORE THE ERROR");
     }
   }, [props.email]);
 
-  const fetchingProduct = React.useCallback(async () => {
-    if (listMyOrders.length > 0) {
-      var productArr = [];
-      listMyOrders.map(async (item) => {
-        const { product, date } = item;
-        const response = await fetch(apiUrl + `/product/${product}`);
-        const data = await response.json();
-        data.product.date = date;
-        productArr.push(data.product);
-        setListProducts(productArr);
-      });
-    }
-  }, [fetchedProducts]);
-
   React.useEffect(() => {
     fetchingMyOrders();
+  }, [fetchingMyOrders]);
 
-    fetchingProduct();
-  }, [fetchingMyOrders, fetchingProduct]);
+  console.log(listProducts);
+  console.log(listMyProducts);
 
   return (
     <div style={{ overflow: "scroll" }}>
