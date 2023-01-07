@@ -43,3 +43,9 @@ For Backend Repository ```https://github.com/avi-3012/olx_clone_backend```
 
     Now open your preferred browser and go to ```http://localhost:3000/``` If the window loads with OLX Logo and title, then **Congrats!!** you have successfully deployed the OLX-CLONE **frontend** on your local network. Be sure to deploy backend of this app for the website to work correctly.
 
+
+## Accounts
+
+- **Email:** test@test.com **Pass:** test
+- **Email:** test2@test.com **Pass:** test
+- **Email:** test3@test.com **Pass:** test
