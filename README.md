@@ -34,6 +34,8 @@ For Backend Repository ```https://github.com/avi-3012/olx_clone_backend```
 - Install all node_modules.
 
     ```npm install```
+    
+- Now, go to package.json file in the frontend directory. Search for "scripts" and remove the "PORT=80" from the "start" script.
 
 - Run the frontend server.
 
