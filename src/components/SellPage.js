@@ -229,7 +229,7 @@ const SellPage = (props) => {
                   className="SuccessFormImageArea"
                   style={{
                     backgroundImage: `url(${URL.createObjectURL(image)})`,
-                    backgroundSize: "cover",
+                    backgroundSize: "contain",
                     backgroundRepeat: "no-repeat",
                     backgroundPosition: "center",
                   }}

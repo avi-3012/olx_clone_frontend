@@ -33,7 +33,6 @@ const Account = (props) => {
       var data2 = await response2.json();
       data.orders = data.orders.reverse();
       data2.products = data2.products.reverse();
-      console.log(data);
 
       if (data.orders && data.orders.length > 0) {
         var productArr = [];
@@ -49,16 +48,12 @@ const Account = (props) => {
 
       setListMyProducts(data2.products);
     } catch (error) {
-      console.log("IGNORE THE ERROR");
     }
   }, [props.email]);
 
   React.useEffect(() => {
     fetchingMyOrders();
   }, [fetchingMyOrders]);
-
-  console.log(listProducts);
-  console.log(listMyProducts);
 
   return (
     <div style={{ overflow: "scroll" }}>

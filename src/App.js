@@ -10,7 +10,6 @@ import SellPage from "./components/SellPage";
 import Account from "./components/Account";
 
 const apiUrl = process.env.REACT_APP_URL + `/api`;
-console.log(apiUrl);
 
 function App() {
   const [email, setEmail] = useState("");
@@ -47,7 +46,6 @@ function App() {
       }
     }
   }, [email]);
-  console.log(isLoggedIn, email);
 
   // console.log(isLoggedIn, email);
   return (
