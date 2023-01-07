@@ -61,7 +61,7 @@ const SellPage = (props) => {
       if (image !== "") {
         try {
           imageElm.style.backgroundImage = `url(${URL.createObjectURL(image)})`;
-          imageElm.style.backgroundSize = "cover";
+          imageElm.style.backgroundSize = "contain";
           imageElm.style.backgroundPosition = "center";
         } catch (error) {}
       }
@@ -91,6 +91,9 @@ const SellPage = (props) => {
       }
       if (price === "") {
         setInvalidForm("Please Enter Price of Product");
+        return;
+      } else if (isNaN(price)){
+        setInvalidForm("Please enter a valid number!!");
         return;
       } else {
         formData.append("price", price);
