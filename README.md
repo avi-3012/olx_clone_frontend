@@ -38,5 +38,5 @@ This is a **Frontend Repository** for the functional OLX clone.
 
     ```npm start```
 
-    Now open your preferred browser and go to ```http://localhost:3000/``` If it shows "Hello World!", then **Congrats!!** you have successfully deployed the OLX-CLONE **frontend** on your local network.
+    Now open your preferred browser and go to ```http://localhost:3000/``` If it shows "Hello World!", then **Congrats!!** you have successfully deployed the OLX-CLONE **frontend** on your local network. Be sure to deploy backend of this app for the website to work correctly.
 
