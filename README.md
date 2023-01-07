@@ -29,7 +29,7 @@ For Backend Repository ```https://github.com/avi-3012/olx_clone_backend```
 
 - Now, Create a ```.env``` file and place it in root directory of frontend folder with below content.
 
-    ```REACT_APP_URL=http://192.168.1.101:5000```
+    ```REACT_APP_URL=http://192.168.1.101:8080```
 
 - Install all node_modules.
 
