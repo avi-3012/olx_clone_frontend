@@ -8,6 +8,7 @@ const Account = (props) => {
   // console.log(props.isLoggedIn);
   const [listProducts, setListProducts] = React.useState([]);
   const [listMyProducts, setListMyProducts] = React.useState([]);
+  const [ignored, forceUpdate] = React.useReducer((x) => x + 1, 0);
 
   const fetchingMyOrders = React.useCallback(async () => {
     try {
@@ -34,10 +35,10 @@ const Account = (props) => {
       data.orders = data.orders.reverse();
       data2.products = data2.products.reverse();
 
-      if (listProducts.length < data2.products.length) {
-        const productArr = [...listProducts];
+      if (listProducts.length < data.orders.length) {
+        var productArr = [];
         if (data.orders && data.orders.length > 0) {
-          data.orders.map(async (item) => {
+          data.orders.forEach(async (item) => {
             const { product, date } = item;
             const response = await fetch(apiUrl + `/product/${product}`);
             const productData = await response.json();
@@ -47,21 +48,26 @@ const Account = (props) => {
         }
         setListProducts(productArr);
         setListMyProducts(data2.products);
+        forceUpdate();
+      } else {
+        setListProducts(listProducts);
+        forceUpdate();
       }
     } catch (error) {}
   }, [props.email, listProducts]);
+  const listProductsArray = listProducts;
 
   React.useEffect(() => {
     fetchingMyOrders();
-  }, [fetchingMyOrders]);
+  }, [fetchingMyOrders, listProductsArray]);
 
   return (
     <div style={{ overflow: "scroll" }}>
       <div className="MyOrders">My Orders</div>
       <div className="itemContainer">
-        {listProducts &&
-          listProducts.length > 0 &&
-          listProducts.map((item) => {
+        {listProductsArray &&
+          listProductsArray.length > 0 &&
+          listProductsArray.map((item) => {
             const { name, email, imgPath, date, price, _id } = item;
             return (
               <div className="itemCard" key={_id}>
@@ -92,7 +98,7 @@ const Account = (props) => {
               </div>
             );
           })}
-        {listProducts && listProducts.length === 0 && (
+        {listProductsArray.length === 0 && (
           <div className="noOrders">No Orders</div>
         )}
       </div>
