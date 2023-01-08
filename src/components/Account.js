@@ -47,12 +47,12 @@ const Account = (props) => {
           });
         }
         setListProducts(productArr);
-        setListMyProducts(data2.products);
         forceUpdate();
       } else {
         setListProducts(listProducts);
         forceUpdate();
       }
+      setListMyProducts(data2.products);
     } catch (error) {}
   }, [props.email, listProducts]);
   const listProductsArray = listProducts;
