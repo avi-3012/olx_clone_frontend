@@ -34,22 +34,22 @@ const Account = (props) => {
       data.orders = data.orders.reverse();
       data2.products = data2.products.reverse();
 
-      if (data.orders && data.orders.length > 0) {
-        var productArr = [];
-        data.orders.map(async (item) => {
-          const { product, date } = item;
-          const response = await fetch(apiUrl + `/product/${product}`);
-          const productData = await response.json();
-          productData.product.date = date;
-          productArr.push(productData.product);
-          setListProducts(productArr);
-        });
+      if (listProducts.length < data2.products.length) {
+        const productArr = [...listProducts];
+        if (data.orders && data.orders.length > 0) {
+          data.orders.map(async (item) => {
+            const { product, date } = item;
+            const response = await fetch(apiUrl + `/product/${product}`);
+            const productData = await response.json();
+            productData.product.date = date;
+            productArr.push(productData.product);
+          });
+        }
+        setListProducts(productArr);
+        setListMyProducts(data2.products);
       }
-
-      setListMyProducts(data2.products);
-    } catch (error) {
-    }
-  }, [props.email]);
+    } catch (error) {}
+  }, [props.email, listProducts]);
 
   React.useEffect(() => {
     fetchingMyOrders();
