@@ -8,7 +8,7 @@ const Account = (props) => {
   // console.log(props.isLoggedIn);
   const [listProducts, setListProducts] = React.useState([]);
   const [listMyProducts, setListMyProducts] = React.useState([]);
-  const [ignored, forceUpdate] = React.useReducer((x) => x + 1, 0);
+  // const [ignored, forceUpdate] = React.useReducer((x) => x + 1, 0);
 
   const fetchingMyOrders = React.useCallback(async () => {
     try {
